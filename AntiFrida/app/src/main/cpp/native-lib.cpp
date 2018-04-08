@@ -7,6 +7,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <android/log.h>
+#include <unistd.h>
 
 #define APPNAME "FridaDetectionTest"
 #define MAX_LINE 512
