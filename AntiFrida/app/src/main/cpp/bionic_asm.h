@@ -36,7 +36,7 @@
 #define __bionic_asm_custom_end(f)
 #define __bionic_asm_function_type @function
 
-#include <machine/asm.h>
+//#include <machine/asm.h>
 
 #define ENTRY_NO_DWARF(f) \
     .text; \
