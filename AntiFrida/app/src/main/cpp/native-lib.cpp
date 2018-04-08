@@ -7,6 +7,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <android/log.h>
+#include <unistd.h>
+#include <errno.h>
 
 #define APPNAME "FridaDetectionTest"
 #define MAX_LINE 512
@@ -55,7 +57,7 @@ void *detect_frida_loop(void *) {
 
                 usleep(100); // Give it some time to answer
 
-                if (ret = recv(sock, res, 6, MSG_DONTWAIT) != -1) {
+                if ((ret = recv(sock, res, 6, MSG_DONTWAIT)) != -1) {
                     if (strcmp(res, "REJECT") == 0) {
                         __android_log_print(ANDROID_LOG_VERBOSE, APPNAME,  "FRIDA DETECTED [1] - frida server running on port %d!", i);
                     }
